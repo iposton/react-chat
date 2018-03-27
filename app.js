@@ -3,9 +3,10 @@ var socket = require('socket.io');
 
 var app = express();
 
-
-server = app.listen(8080, function(){
-    console.log('server is running on port 8080')
+const port = process.env.PORT || '8080';
+app.set('port', port);
+server = app.listen(port, function(){
+    console.log(`Running on localhost:${port}`)
 });
 
 io = socket(server);
