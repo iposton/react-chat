@@ -25,7 +25,7 @@ class Chat extends React.Component{
             messages: []
         };
 
-        this.socket = io('nhl-starting-goalies-angular.herokuapp.com');
+        this.socket = io('new-parent-chat.herokuapp.com');
         // this.socket = io('localhost:8080');
 
         this.socket.on('RECEIVE_MESSAGE', function(data){
