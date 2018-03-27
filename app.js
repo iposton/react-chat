@@ -5,14 +5,13 @@ const path = require('path');
 
 var app = express();
 
-
 app.use(express.static(path.join(__dirname, 'build')));
 
 const port = process.env.PORT || '8080';
 app.set('port', port);
-server = app.listen(port, function(){
-    console.log(`Running on localhost:${port}`)
-});
+
+const server = http.createServer(app);
+server.listen(port, () => console.log(`Running on localhost:${port}`));
 
 io = socket(server);
 
