@@ -2,16 +2,15 @@ import React from "react";
 import io from "socket.io-client";
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
-import {orange500, blue500, grey50} from 'material-ui/styles/colors';
+import {grey50} from 'material-ui/styles/colors';
 
 
 
 const style = {
 
-    placeholderStyle: {
+  placeholderStyle: {
     color: grey50,
   },
-
   margin: 12,
 
 };
@@ -26,7 +25,8 @@ class Chat extends React.Component{
             messages: []
         };
 
-        this.socket = io('localhost:8080');
+        this.socket = io('nhl-starting-goalies-angular.herokuapp.com');
+        // this.socket = io('localhost:8080');
 
         this.socket.on('RECEIVE_MESSAGE', function(data){
             addMessage(data);
